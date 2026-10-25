@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "allow": [
+    "**/CHANGELOG.md",
+    ".changeset/**",
+    "decisions/**",
+    "docs/**/evidence/**",
+    "ecosystem/naming-ledger.json",
+    "content/standards/naming.md"
+  ],
+  "entries": [
+    {
+      "id": "arcui-to-facet",
+      "class": "renamed",
+      "from": ["ArcUI"],
+      "patterns": ["\\bArcUI\\b", "\\barcui\\b"],
+      "to": "Facet",
+      "evidence": "ecosystem.json products[0].legacyNames; facet/README.md",
+      "examples": {
+        "match": ["ArcUI", "arcui"],
+        "noMatch": ["ArcevoCirqle", "arcevocirqle.com.ng", "contact@arcevocirqle.com.ng"]
+      }
+    },
+    {
+      "id": "arcid-to-sovgrant",
+      "class": "renamed",
+      "from": ["ArcID", "Arc-ID", "arc-id", "arcid"],
+      "patterns": ["\\bArcID\\b", "\\bArc-ID\\b", "\\barc-id\\b", "\\barcid\\b(?!_)"],
+      "to": "SovGrant",
+      "notes": "standalone product/service name only; the arcid_* storage keys are a separate pending entry",
+      "evidence": "ecosystem.json products[1].legacyNames",
+      "examples": {
+        "match": ["ArcID", "Arc-ID", "arc-id", "the arcid service"],
+        "noMatch": ["arcid_access_token", "arcid_refresh_token", "ArcevoCirqle", "arcevocirqle.com.ng"]
+      }
+    },
+    {
+      "id": "arcbase-to-relnex",
+      "class": "renamed",
+      "from": ["ArcBase", "Arcbase"],
+      "patterns": ["\\bArcBase\\b", "\\bArcbase\\b", "\\barcbase\\b"],
+      "to": "Relnex",
+      "evidence": "ecosystem.json products[2].legacyNames; relnex/README.md is still titled under this legacy name",
+      "examples": {
+        "match": ["ArcBase", "Arcbase", "arcbase"],
+        "noMatch": ["ArcevoCirqle", "arcevocirqle.com.ng"]
+      }
+    },
+    {
+      "id": "arcwallet-to-sovport",
+      "class": "renamed",
+      "from": ["ArcWallet"],
+      "patterns": ["\\bArcWallet\\b", "\\barcwallet\\b"],
+      "to": "SovPort",
+      "evidence": "ecosystem.json products[3].legacyNames",
+      "examples": {
+        "match": ["ArcWallet", "arcwallet"],
+        "noMatch": ["ArcevoCirqle", "arcevocirqle.com.ng"]
+      }
+    },
+    {
+      "id": "arcevo-scope-to-fusorb",
+      "class": "renamed",
+      "from": ["@arcevo/"],
+      "patterns": ["@arcevo/"],
+      "to": "@fusorb/",
+      "notes": "the trailing slash is mandatory so the live @arcevocirqle handle never matches",
+      "evidence": "ecosystem.json npmScopes (retired); @arcevo/facet-auth returns 404 on the registry",
+      "examples": {
+        "match": ["@arcevo/facet-auth", "@arcevo/facet-sdk"],
+        "noMatch": ["@arcevocirqle", "@fusorb/facet-auth"]
+      }
+    },
+    {
+      "id": "arcevodev-to-fusorb",
+      "class": "renamed",
+      "from": ["ArcevoDev"],
+      "patterns": ["\\bArcevoDev\\b"],
+      "to": "fusorb",
+      "evidence": "ecosystem.json orgs[2] (retired)",
+      "examples": {
+        "match": ["ArcevoDev"],
+        "noMatch": ["ArcevoCirqle", "arcevocirqle.com.ng"]
+      }
+    },
+    {
+      "id": "arc-identifiers-to-sg",
+      "class": "pending",
+      "from": ["ArcIdClient", "ArcIdClientConfig", "ArcProvider", "ArcProviderProps"],
+      "patterns": ["\\bArcIdClient\\b", "\\bArcIdClientConfig\\b", "\\bArcProvider\\b", "\\bArcProviderProps\\b"],
+      "to": "SgClient, SgClientConfig, SgProvider, SgProviderProps",
+      "blockedBy": "facet release containing .changeset/rename-arcid-to-sg.md (major, breaking)",
+      "notes": "consumers keep the old identifiers until facet releases, then upgrade and rename in one change",
+      "evidence": "facet/.changeset/rename-arcid-to-sg.md; @fusorb/facet-sdk@1.2.1 and @fusorb/facet-auth@1.3.7 tarballs still export the old names",
+      "examples": {
+        "match": ["ArcIdClient", "ArcIdClientConfig", "ArcProvider", "ArcProviderProps"],
+        "noMatch": ["SgClient", "SgProvider", "ArcevoCirqle", "arcevocirqle.com.ng"]
+      }
+    },
+    {
+      "id": "arcid-storage-keys-to-sg",
+      "class": "pending",
+      "from": ["arcid_access_token", "arcid_refresh_token"],
+      "patterns": ["\\barcid_access_token\\b", "\\barcid_refresh_token\\b"],
+      "to": "sg_access_token, sg_refresh_token",
+      "blockedBy": "facet release containing .changeset/rename-arcid-to-sg.md (major, breaking)",
+      "notes": "changes stored cookie/storage keys, so consumers need a migration plan",
+      "evidence": "facet/.changeset/rename-arcid-to-sg.md; @fusorb/facet-auth@1.3.7 tarball",
+      "examples": {
+        "match": ["arcid_access_token", "arcid_refresh_token"],
+        "noMatch": ["sg_access_token", "sg_refresh_token", "arcevocirqle.com.ng"]
+      }
+    },
+    {
+      "id": "arcevocirqle-live",
+      "class": "live",
+      "from": ["ArcevoCirqle", "arcevocirqle", "arcevocirqle.com.ng", "@arcevocirqle"],
+      "patterns": ["\\bArcevoCirqle\\b", "\\barcevocirqle\\b", "\\barcevocirqle\\.com\\.ng\\b", "@arcevocirqle\\b"],
+      "to": null,
+      "notes": "the public brand and domain; never rename; @arcevocirqle social handle assumed live (owner to confirm)",
+      "evidence": "ecosystem.json layers[1] and domains[0] (live)",
+      "examples": {
+        "match": ["ArcevoCirqle", "arcevocirqle", "arcevocirqle.com.ng", "contact@arcevocirqle.com.ng"],
+        "noMatch": []
+      }
+    }
+  ]
+}

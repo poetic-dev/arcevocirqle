@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "orgs": [
+    { "id": "fusorb", "status": "active", "role": "Canonical architecture org: product repos and the @fusorb npm scope" },
+    { "id": "poetic-dev", "status": "active", "role": "Current host of the fusorb and arcevocirqle foundation repos; may transfer to fusorb" },
+    { "id": "ArcevoDev", "status": "retired", "role": "Legacy org; inaccessible and unused. Never link to it." }
+  ],
+  "npmScopes": [
+    { "scope": "@fusorb", "status": "live" },
+    { "scope": "@arcevo", "status": "retired" }
+  ],
+  "layers": [
+    { "id": "fusorb", "repo": { "org": "poetic-dev", "name": "fusorb" },
+      "audience": "developers, organizations, integrators",
+      "role": "Product and architecture layer" },
+    { "id": "arcevocirqle", "repo": { "org": "poetic-dev", "name": "arcevocirqle" },
+      "audience": "public",
+      "role": "Public-facing layer and live ecosystem" }
+  ],
+  "products": [
+    { "id": "facet", "name": "Facet", "legacyNames": ["ArcUI"],
+      "repo": { "org": "fusorb", "name": "facet" },
+      "role": "The single UI system for the whole ecosystem",
+      "audience": "public" },
+    { "id": "sovgrant", "name": "SovGrant", "legacyNames": ["ArcID"],
+      "repo": { "org": "fusorb", "name": "sovgrant" },
+      "role": "Canonical identity and access layer",
+      "audience": "undecided" },
+    { "id": "relnex", "name": "Relnex", "legacyNames": ["ArcBase", "Arcbase"],
+      "repo": { "org": "fusorb", "name": "relnex" },
+      "role": "Knowledge, resource and graph system",
+      "audience": "undecided" },
+    { "id": "sovport", "name": "SovPort", "legacyNames": ["ArcWallet"],
+      "repo": { "org": "fusorb", "name": "sovport" },
+      "role": "Self-sovereign wallet and portable identity",
+      "audience": "undecided" },
+    { "id": "intel", "name": "Intel", "legacyNames": [],
+      "repo": { "org": "fusorb", "name": "intel" },
+      "role": "Architectural and engineering intelligence layer",
+      "audience": "internal" }
+  ],
+  "domains": [
+    { "host": "arcevocirqle.com.ng", "status": "live",
+      "uses": ["email", "arcevocirqle public site (to be deployed)"] },
+    { "host": "fusorb.com", "status": "planned", "target": "before end of 2026" },
+    { "host": "facet.fusorb.com", "status": "planned", "serves": "facet" },
+    { "host": "intel.fusorb.com", "status": "planned", "serves": "intel",
+      "note": "audience of this deployment is undecided" }
+  ],
+  "sequencing": [
+    { "order": 1, "product": "sovgrant", "note": "to maturity first" },
+    { "order": 2, "product": "relnex" }
+  ]
+}
