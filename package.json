@@ -1,16 +1,20 @@
 {
   "name": "arcevocirqle",
-  
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
+  "description": "Public-facing layer and live ecosystem of the Fusorb ecosystem, operating as a Fusorb initiative.",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sync:fusorb": "node scripts/sync-fusorb.mjs",
+    "gen:docs": "node scripts/gen-public-docs.mjs",
+    "check:sync": "node scripts/sync-fusorb.mjs --check",
+    "check:names": "node vendor/fusorb/tools/check-legacy-names.mjs --root . --ledger vendor/fusorb/naming-ledger.json --allow \"vendor/fusorb/**\" --allow \"decisions/**\" --allow \"docs/foundation/**\"",
+    "check:content": "node scripts/check-content.mjs",
+    "check:public-boundary": "node scripts/check-public-boundary.mjs",
+    "check:all": "pnpm check:sync && pnpm check:names && pnpm check:content && pnpm check:public-boundary"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "next": "^16.3.4"
+  "packageManager": "pnpm@12.4.1",
+  "engines": {
+    "node": ">=22"
   }
 }
