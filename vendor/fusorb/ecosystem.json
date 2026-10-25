@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "orgs": [
     { "id": "fusorb", "status": "active", "role": "Canonical architecture org: product repos and the @fusorb npm scope" },
-    { "id": "poetic-dev", "status": "active", "role": "Current host of the fusorb and arcevocirqle foundation repos; may transfer to fusorb" },
+    { "id": "poetic-dev", "status": "active", "role": "Current host of the fusorb and arcevocirqle foundation repos (they stay here)" },
     { "id": "ArcevoDev", "status": "retired", "role": "Legacy org; inaccessible and unused. Never link to it." }
   ],
   "npmScopes": [
@@ -42,10 +42,11 @@
   "domains": [
     { "host": "arcevocirqle.com.ng", "status": "live",
       "uses": ["email", "arcevocirqle public site (to be deployed)"] },
-    { "host": "fusorb.com", "status": "planned", "target": "before end of 2026" },
+    { "host": "fusorb.com", "status": "planned", "target": "before end of 2026",
+      "note": "hosts this repo's future site once secured" },
     { "host": "facet.fusorb.com", "status": "planned", "serves": "facet" },
     { "host": "intel.fusorb.com", "status": "planned", "serves": "intel",
-      "note": "audience of this deployment is undecided" }
+      "note": "access-controlled" }
   ],
   "sequencing": [
     { "order": 1, "product": "sovgrant", "note": "to maturity first" },

@@ -1,14 +1,14 @@
 {
-  "sourceCommit": "2f3687fc97afae35c159713da05ef007976de667",
-  "syncedAt": "2026-10-25T00:09:09.199Z",
+  "sourceCommit": "9ef322d7bf1680c2e6141aec5f852f0aa74fdb14",
+  "syncedAt": "2026-10-25T09:41:21.599Z",
   "files": [
     {
       "path": "ecosystem.json",
-      "sha256": "171614ca0d2bdcae2a7a848ae31257f7c4fab90df8b42fcaba495b30858975cf"
+      "sha256": "78ed155ee5bfeccd09f66fe12a4ff83f40d0d12618aa8ae24d8fa412aaaf48bd"
     },
     {
       "path": "naming-ledger.json",
-      "sha256": "109dcbe8cd11502971d19f26ec44e7262209532a9fcdeb6ea207aec76ed9c600"
+      "sha256": "efc3624327191935b0847a5d349e8c7d385965862d38cab47161fce7744492c3"
     },
     {
       "path": "tools/check-legacy-names.mjs",

@@ -28,8 +28,9 @@ may be published?
 ## 3. audience for SovGrant, Relnex, SovPort
 
 This is answered in the Fusorb repo's owner questions; this repo only consumes
-the answer from the vendored ecosystem data (currently undecided). No decision
-is made here.
+the answer from the vendored ecosystem data (currently undecided). The Fusorb
+recommendation is to keep them internal until each is ready to be described
+publicly.
 
 - Blocks: nothing here. These products stay out of public content until the
   vendored audience is public.
@@ -45,20 +46,18 @@ arcevocirqle.com.ng given the domain also carries email?
   any site work starts.
 - Blocks: the site start decision (an ADR 0004 precondition).
 
-## 5. @arcevocirqle social handle
+## 5. Social handles
 
-Whether and when the @arcevocirqle social handle is linked from the site.
+Answered by the Fusorb repo: the @arcevocirqle handle does not exist. Live
+social is @fusorb_hq on X and the LinkedIn page
+linkedin.com/company/arcevocirqle.
 
-- Options: link it when the owner confirms the handle; or leave it unlinked
-  until then.
-- Recommendation: confirm the handle first; do not link an unconfirmed handle.
-- Blocks: adding a social link to the site.
+- Blocks: none here. This repo consumes the answer; the site should link the
+  live handles, not @arcevocirqle.
 
 ## 6. The older hyphenated GitHub repo arcevo-cirqle
 
-What to do with the older hyphenated GitHub repo arcevo-cirqle.
+Answered by the Fusorb repo: the hyphenated repo was deleted from the public
+GitHub profile.
 
-- Options: archive it; redirect it via its description or README to this repo;
-  or leave it as-is.
-- Recommendation: archive or redirect; leaving it risks splitting identity.
-- Blocks: a clean public identity across GitHub.
+- Blocks: none here.

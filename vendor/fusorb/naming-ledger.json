@@ -64,11 +64,11 @@
       "from": ["@arcevo/"],
       "patterns": ["@arcevo/"],
       "to": "@fusorb/",
-      "notes": "the trailing slash is mandatory so the live @arcevocirqle handle never matches",
+      "notes": "the trailing slash is mandatory so it matches only the npm scope, never a live name",
       "evidence": "ecosystem.json npmScopes (retired); @arcevo/facet-auth returns 404 on the registry",
       "examples": {
         "match": ["@arcevo/facet-auth", "@arcevo/facet-sdk"],
-        "noMatch": ["@arcevocirqle", "@fusorb/facet-auth"]
+        "noMatch": ["@fusorb_hq", "@fusorb/facet-auth"]
       }
     },
     {
@@ -114,13 +114,13 @@
     {
       "id": "arcevocirqle-live",
       "class": "live",
-      "from": ["ArcevoCirqle", "arcevocirqle", "arcevocirqle.com.ng", "@arcevocirqle"],
-      "patterns": ["\\bArcevoCirqle\\b", "\\barcevocirqle\\b", "\\barcevocirqle\\.com\\.ng\\b", "@arcevocirqle\\b"],
+      "from": ["ArcevoCirqle", "arcevocirqle", "arcevocirqle.com.ng", "@fusorb_hq"],
+      "patterns": ["\\bArcevoCirqle\\b", "\\barcevocirqle\\b", "\\barcevocirqle\\.com\\.ng\\b", "@fusorb_hq\\b"],
       "to": null,
-      "notes": "the public brand and domain; never rename; @arcevocirqle social handle assumed live (owner to confirm)",
-      "evidence": "ecosystem.json layers[1] and domains[0] (live)",
+      "notes": "the public brand and domain; never rename. Live social: @fusorb_hq on X and the LinkedIn company page (linkedin.com/company/arcevocirqle)",
+      "evidence": "ecosystem.json layers[1] and domains[0] (live); docs/foundation/owner-questions.md",
       "examples": {
-        "match": ["ArcevoCirqle", "arcevocirqle", "arcevocirqle.com.ng", "contact@arcevocirqle.com.ng"],
+        "match": ["ArcevoCirqle", "arcevocirqle", "arcevocirqle.com.ng", "contact@arcevocirqle.com.ng", "@fusorb_hq"],
         "noMatch": []
       }
     }
