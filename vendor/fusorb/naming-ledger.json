@@ -27,7 +27,7 @@
       "from": ["ArcID", "Arc-ID", "arc-id", "arcid"],
       "patterns": ["\\bArcID\\b", "\\bArc-ID\\b", "\\barc-id\\b", "\\barcid\\b(?!_)"],
       "to": "SovGrant",
-      "notes": "standalone product/service name only; the arcid_* storage keys are a separate pending entry",
+      "notes": "standalone product/service name only; the arcid_* storage keys are a separate entry",
       "evidence": "ecosystem.json products[1].legacyNames",
       "examples": {
         "match": ["ArcID", "Arc-ID", "arc-id", "the arcid service"],
@@ -85,13 +85,14 @@
     },
     {
       "id": "arc-identifiers-to-sg",
-      "class": "pending",
+      "class": "renamed",
       "from": ["ArcIdClient", "ArcIdClientConfig", "ArcProvider", "ArcProviderProps"],
       "patterns": ["\\bArcIdClient\\b", "\\bArcIdClientConfig\\b", "\\bArcProvider\\b", "\\bArcProviderProps\\b"],
       "to": "SgClient, SgClientConfig, SgProvider, SgProviderProps",
-      "blockedBy": "facet release containing .changeset/rename-arcid-to-sg.md (major, breaking)",
-      "notes": "consumers keep the old identifiers until facet releases, then upgrade and rename in one change",
-      "evidence": "facet/.changeset/rename-arcid-to-sg.md; @fusorb/facet-sdk@1.2.1 and @fusorb/facet-auth@1.3.7 tarballs still export the old names",
+      "availableIn": { "@fusorb/facet-auth": "2.0.0", "@fusorb/facet-sdk": "2.0.0" },
+      "adoptWith": ["@fusorb/facet-store", "@fusorb/facet-layout", "@fusorb/facet-docs"],
+      "notes": "available in auth>=2.0.0 and sdk>=2.0.0; adopt in the same change as store>=1.0.2, layout>=1.6.0, docs>=1.5.8 (older versions pin auth exactly and install a second copy)",
+      "evidence": "@fusorb/facet-sdk@2.0.0 and @fusorb/facet-auth@2.0.0 tarballs export SgClient/SgProvider (verified 2026-10-25)",
       "examples": {
         "match": ["ArcIdClient", "ArcIdClientConfig", "ArcProvider", "ArcProviderProps"],
         "noMatch": ["SgClient", "SgProvider", "ArcevoCirqle", "arcevocirqle.com.ng"]
@@ -99,13 +100,13 @@
     },
     {
       "id": "arcid-storage-keys-to-sg",
-      "class": "pending",
+      "class": "renamed",
       "from": ["arcid_access_token", "arcid_refresh_token"],
       "patterns": ["\\barcid_access_token\\b", "\\barcid_refresh_token\\b"],
       "to": "sg_access_token, sg_refresh_token",
-      "blockedBy": "facet release containing .changeset/rename-arcid-to-sg.md (major, breaking)",
-      "notes": "changes stored cookie/storage keys, so consumers need a migration plan",
-      "evidence": "facet/.changeset/rename-arcid-to-sg.md; @fusorb/facet-auth@1.3.7 tarball",
+      "availableIn": { "@fusorb/facet-auth": "2.0.0" },
+      "notes": "stored sessions are not migrated, users re-authenticate",
+      "evidence": "@fusorb/facet-auth@2.0.0 tarball uses sg_access_token/sg_refresh_token (verified 2026-10-25)",
       "examples": {
         "match": ["arcid_access_token", "arcid_refresh_token"],
         "noMatch": ["sg_access_token", "sg_refresh_token", "arcevocirqle.com.ng"]

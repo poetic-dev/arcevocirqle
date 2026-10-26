@@ -48,6 +48,12 @@ function compile(patterns) {
   return patterns.map((p) => new RegExp(p));
 }
 
+function formatAvailableIn(obj) {
+  return Object.entries(obj)
+    .map(([pkg, v]) => `${pkg}>=${v}`)
+    .join(", ");
+}
+
 function selfTest(entries) {
   for (const entry of entries) {
     const patterns = compile(entry.patterns);
@@ -136,8 +142,16 @@ async function main() {
         for (const p of entry.patterns) {
           if (new RegExp(p).test(line)) {
             failures += 1;
+            let hint = " (update or allowlist)";
+            if (entry.availableIn && Object.keys(entry.availableIn).length > 0) {
+              hint = ` (available in ${formatAvailableIn(entry.availableIn)}`;
+              if (Array.isArray(entry.adoptWith) && entry.adoptWith.length > 0) {
+                hint += `; adopt with ${entry.adoptWith.join(", ")}`;
+              }
+              hint += ")";
+            }
             console.error(
-              `${file}:${i + 1}: renamed "${entry.from.join(", ")}" -> "${entry.to}" (update or allowlist)`
+              `${file}:${i + 1}: renamed "${entry.from.join(", ")}" -> "${entry.to}"${hint}`
             );
           }
         }

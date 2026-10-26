@@ -2,8 +2,8 @@
 //
 // A "derived fact" is a number next to a counted noun (components, packages,
 // tests, routes, presets, icons, effects, repos, ...) or a semver string.
-// Measurements are owned elsewhere (the owning repo, the Facet registry, Intel)
-// and must never be hand-typed into this repo's authored text.
+// Measurements are owned elsewhere (the owning repo, the package registry, the
+// downstream consumer) and must never be hand-typed into this repo's authored text.
 //
 // Single exported API: scanDerivedFacts(text) -> [{ line, match, text }]
 // Skips fenced code blocks (``` / ~~~) and <!-- BEGIN:evidence --> ...
