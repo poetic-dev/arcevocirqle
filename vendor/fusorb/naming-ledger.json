@@ -40,7 +40,7 @@
       "from": ["ArcBase", "Arcbase"],
       "patterns": ["\\bArcBase\\b", "\\bArcbase\\b", "\\barcbase\\b"],
       "to": "Relnex",
-      "evidence": "ecosystem.json products[2].legacyNames; relnex/README.md is still titled under this legacy name",
+      "evidence": "ecosystem.json products[2].legacyNames; relnex migrated to the current name (owner-confirmed 2026-10-31)",
       "examples": {
         "match": ["ArcBase", "Arcbase", "arcbase"],
         "noMatch": ["ArcevoCirqle", "arcevocirqle.com.ng"]

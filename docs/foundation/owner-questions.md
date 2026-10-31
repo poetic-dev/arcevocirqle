@@ -27,13 +27,11 @@ may be published?
 
 ## 3. audience for SovGrant, Relnex, SovPort
 
-This is answered in the Fusorb repo's owner questions; this repo only consumes
-the answer from the vendored ecosystem data (currently undecided). The Fusorb
-recommendation is to keep them internal until each is ready to be described
-publicly.
+Answered by the Fusorb repo (2026-10-31): all three are internal. This repo
+consumes the answer from the vendored ecosystem data; they stay out of public
+content until the vendored audience is public.
 
-- Blocks: nothing here. These products stay out of public content until the
-  vendored audience is public.
+- Blocks: nothing here.
 
 ## 4. Hosting provider and cutover plan
 
