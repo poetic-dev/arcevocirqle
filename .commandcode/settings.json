@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "powershell",
+      "Shell(pnpm:*)",
+      "Shell(C:\\Users\\HP\\AppData\\Local\\pnpm\\bin\\pnpm.CMD:*)",
+      "Shell(node -e console.log('node-ok'))",
+      "Shell(tasklist:*)",
+      "Shell(wmic process where \"name='node.exe'\" get ProcessId,CommandLine /format:list 2>nul | findstr /R \"ProcessId CommandLine\")",
+      "Shell(taskkill:*)",
+      "Shell(cd /d \"%COMMANDCODE_SCRATCHPAD%\" && mkdir pnpmtest 2>nul & cd pnpmtest & echo {\"name\":\"x\",\"private\":true} > package.json & pnpm install --offline --config.update-notifier=false 2>&1 & echo \"EXIT=%ERRORLEVEL%\" & dir)",
+      "Shell(echo:*)",
+      "Shell(rmdir:*)",
+      "Shell(del:*)",
+      "Shell(type:*)",
+      "Shell(dir /a .npmrc 2>nul & echo --- & type .npmrc 2>nul & echo --- & npm config get packageManager 2>nul)",
+      "Shell(git:*)",
+      "Shell(matching:*)",
+      "Shell(,:*)",
+      "Shell(and:*)",
+      "Shell(node scripts/sync-fusorb.mjs --from \"C:\\Users\\HP\\Desktop\\poetic-dev\\fusorb\")",
+      "Shell(node scripts/sync-fusorb.mjs --check)",
+      "Shell(dir:*)",
+      "Shell(node vendor/fusorb/tools/check-legacy-names.mjs --root . --ledger vendor/fusorb/naming-ledger.json --allow \"vendor/fusorb/**\" --allow \"decisions/**\" --allow \"docs/foundation/**\")",
+      "Shell(node --check scripts/gen-public-docs.mjs)",
+      "Shell(node --check scripts/check-content.mjs)",
+      "Shell(node --check scripts/check-public-boundary.mjs)",
+      "Shell(node scripts/check-public-boundary.mjs)",
+      "Shell(node scripts/gen-public-docs.mjs)",
+      "Shell(node scripts/check-content.mjs)",
+      "Shell(node vendor/fusorb/tools/check-legacy-names.mjs --root . --ledger vendor/fusorb/naming-ledger.json --allow vendor/fusorb/** --allow decisions/** --allow docs/foundation/**)",
+      "Shell(git -C \"C:\\Users\\HP\\Desktop\\poetic-dev\\arcevocirqle\" ls-files | ForEach-Object { $_ } 2>$null)",
+      "Shell(node scripts/sync-fusorb.mjs --from C:\\Users\\HP\\Desktop\\poetic-dev\\fusorb)"
+    ],
+    "deny": [],
+    "defaultMode": "default"
+  }
+}

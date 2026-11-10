@@ -1,0 +1,6 @@
+- Never writes, commits, installs, or runs anything outside the current repo; treats sibling/external repos as strictly read-only. Confidence: 0.9
+- Runs precondition checks first and stops to report if any item fails, rather than proceeding or improvising around it. Confidence: 0.9
+- Records git state (status, current commit, branch) before and after work; never pushes and never modifies main directly. Confidence: 0.9
+- Defaults authored pages/content to draft visibility; only the owner promotes to public. Confidence: 0.8
+- Does not fabricate content (marketing copy, legal text, testimonials, team bios, social proof, invented contact details); leaves owner-authored placeholders instead. Confidence: 0.9
+- When the owner says an upstream/source repo changed, expects the agent to verify against that repo directly rather than asking the owner to restate the details. Confidence: 0.5

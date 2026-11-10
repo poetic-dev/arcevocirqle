@@ -1,0 +1,3 @@
+- Prefers a concise, structured final report (branch/commit/result, tree, gate proofs, owner questions, deviations) without recapping steps. Confidence: 0.8
+- Documents stop conditions and owner questions as options + recommendation + what each blocks, without deciding them. Confidence: 0.7
+- Tends to accept and adopt the agent's recommendations rather than overriding them. Confidence: 0.5

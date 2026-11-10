@@ -1,0 +1,7 @@
+- Uses pnpm with Node 22+ and ESM. Confidence: 0.8
+- Prefers zero/minimal dependencies; gate and check scripts are dependency-free. Confidence: 0.8
+- Writes Windows-safe scripts: no shell-specific code, parse line endings with \r?\n, handle CRLF. Confidence: 0.8
+- Uses ADRs (MADR format, status Proposed) to record decisions. Confidence: 0.8
+- Gate/check scripts exit 1 with file:line and a fix hint. Confidence: 0.8
+- Prefers a single source of truth via vendored snapshots with provenance (SOURCE → GENERATOR → CONSUMER) over copy-paste to avoid drift. Confidence: 0.8
+- Does not guess commit SHAs; reuses pinned SHAs from an authoritative source and cites it. Confidence: 0.7

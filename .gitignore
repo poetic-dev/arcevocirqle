@@ -3,11 +3,17 @@
 /.pnpm-store
 
 # Agent working output (local only)
-/.agent/
+# Keep .agent/episodes.md tracked (architectural inferences).
+/.agent/*
+!/.agent/episodes.md
 /.agent-cache/
 
 # Command Code local state
-/.commandcode/
+# Keep settings.json and taste tracked; other local state stays ignored.
+/.commandcode/*
+!/.commandcode/settings.json
+!/.commandcode/taste/
+!/.commandcode/taste/**
 
 # Logs
 *.log
