@@ -13,7 +13,7 @@
     "check:public-boundary": "node scripts/check-public-boundary.mjs",
     "check:all": "pnpm check:sync && pnpm check:names && pnpm check:content && pnpm check:public-boundary"
   },
-  "packageManager": "pnpm@12.4.1",
+  "packageManager": "pnpm@12.18.0",
   "engines": {
     "node": ">=22"
   }
